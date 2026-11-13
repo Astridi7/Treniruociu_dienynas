@@ -21,6 +21,18 @@
       <p class="meta">Pirmadienis–sekmadienis. Įtraukiami visi treniruočių tipai.</p>
       <div id="weekly-content" role="status" aria-live="polite"><p>Kraunama…</p></div>
     </section>
+    <section class="card exercise-timer" aria-labelledby="timer-heading">
+      <h2 id="timer-heading">Pratimo laikmatis</h2>
+      <p class="meta">Matuokite pratimo laiką. Sustabdę galėsite tęsti.</p>
+      <div id="timer-display" class="timer-display" role="timer" aria-label="Pratimo laikas" aria-live="off">00:00:00</div>
+      <p class="meta">Valandos : minutės : sekundės</p>
+      <div class="timer-controls">
+        <button type="button" id="timer-start">Start</button>
+        <button type="button" id="timer-stop" disabled>Stop</button>
+        <button type="button" id="timer-reset" disabled>Nustatyti iš naujo</button>
+      </div>
+      <p id="timer-status" role="status" aria-live="polite">Pasiruošę pradėti.</p>
+    </section>
     <div class="layout">
       <section class="card"><h2>Pridėti treniruotę</h2>
         <form id="workout-form">

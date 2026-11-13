@@ -23,6 +23,14 @@ article h3 { margin: 0 0 8px; font-size: 18px; overflow-wrap: anywhere; }
 article p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
 .empty { border: 1px dashed #b7cabc; border-radius: 16px; padding: 40px 24px; color: #61736b; text-align: center; }
 #status { font-size: 14px; margin-bottom: 0; }
+.exercise-timer { margin-bottom: 32px; }
+.timer-display { font-size: clamp(36px, 8vw, 64px); font-variant-numeric: tabular-nums; font-family: ui-monospace, monospace; letter-spacing: .04em; }
+.timer-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.timer-controls button { width: auto; flex: 1 1 120px; }
+#timer-stop { background: #8c4136; }
+#timer-reset { background: #e7eee9; color: #19352d; }
+.timer-controls button:disabled { cursor: default; }
+#timer-status { margin-bottom: 0; font-size: 14px; color: #62776a; }
 .weekly-report { margin-bottom: 32px; }
 .week-controls { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; }
 .week-controls label { margin: 0; }

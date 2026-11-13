@@ -1,5 +1,60 @@
 import { moveDate, weeklyReport } from './weekly-report.js';
 
+// The clock measures elapsed time independently of UI update frequency.
+{
+  const display = document.querySelector('#timer-display');
+  const start = document.querySelector('#timer-start');
+  const stop = document.querySelector('#timer-stop');
+  const reset = document.querySelector('#timer-reset');
+  const message = document.querySelector('#timer-status');
+  let elapsed = 0;
+  let startedAt = null;
+  let interval = null;
+
+  function updateTimer() {
+    const milliseconds = elapsed + (startedAt === null ? 0 : performance.now() - startedAt);
+    const seconds = Math.floor(milliseconds / 1000);
+    display.textContent = [Math.floor(seconds / 3600), Math.floor(seconds / 60) % 60, seconds % 60]
+      .map(value => String(value).padStart(2, '0')).join(':');
+  }
+
+  start.addEventListener('click', () => {
+    if (startedAt !== null) return;
+    startedAt = performance.now();
+    interval = setInterval(updateTimer, 100);
+    start.disabled = true;
+    stop.disabled = false;
+    reset.disabled = false;
+    message.textContent = 'Laikas matuojamas.';
+    updateTimer();
+  });
+
+  stop.addEventListener('click', () => {
+    if (startedAt === null) return;
+    elapsed += performance.now() - startedAt;
+    startedAt = null;
+    clearInterval(interval);
+    interval = null;
+    start.disabled = false;
+    stop.disabled = true;
+    message.textContent = 'Laikmatis sustabdytas. Paspauskite „Start“, kad tęstumėte.';
+    updateTimer();
+  });
+
+  reset.addEventListener('click', () => {
+    clearInterval(interval);
+    interval = null;
+    elapsed = 0;
+    startedAt = null;
+    start.disabled = false;
+    stop.disabled = true;
+    reset.disabled = true;
+    message.textContent = 'Pasiruošę pradėti.';
+    updateTimer();
+  });
+  document.addEventListener('visibilitychange', updateTimer);
+}
+
 const form = document.querySelector('#workout-form');
 const list = document.querySelector('#workouts');
 const status = document.querySelector('#status');
