@@ -1,0 +1,12 @@
+{
+  "name": "treniruociu-dienynas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Paprastas treniruočių dienynas su Node.js",
+  "type": "module",
+  "engines": { "node": ">=22.9.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js"
+  }
+}

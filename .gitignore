@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Secrets (keep the safe template)
+.env
+.env.*
+!.env.example
+
+# Local workout data
+data/
+
+# Build output and coverage
+dist/
+build/
+coverage/
+
+# Logs and editor / OS files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
