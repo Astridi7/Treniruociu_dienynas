@@ -42,7 +42,10 @@ const server = http.createServer(async (req, res) => {
       }
       let input;
       try { input = JSON.parse(body); } catch { return json(res, 400, { error: 'Netinkamas JSON.' }); }
-      const { title, date, minutes, notes = '' } = input || {};
+      const { title, date, minutes, notes = '', type = 'Kita' } = input || {};
+      if (!['Bėgimas', 'Jėga', 'Joga', 'Plaukimas', 'Kita'].includes(type)) {
+        return json(res, 400, { error: 'Pasirinkite tinkamą treniruotės tipą.' });
+      }
       if (typeof title !== 'string' || !title.trim() || title.length > 100 ||
           typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
           !Number.isFinite(Date.parse(date)) || new Date(date).toISOString().slice(0, 10) !== date ||
@@ -50,7 +53,7 @@ const server = http.createServer(async (req, res) => {
           typeof notes !== 'string' || notes.length > 2000) {
         return json(res, 400, { error: 'Patikrinkite pavadinimą, datą ir trukmę (1–1440 min.).' });
       }
-      const workout = { id: randomUUID(), title: title.trim(), date, minutes, notes: notes.trim() };
+      const workout = { id: randomUUID(), title: title.trim(), date, minutes, notes: notes.trim(), type };
       const save = queue.then(async () => {
         const workouts = await loadWorkouts();
         workouts.push(workout);

@@ -1,6 +1,7 @@
 const form = document.querySelector('#workout-form');
 const list = document.querySelector('#workouts');
 const status = document.querySelector('#status');
+const typeFilter = document.querySelector('#type-filter');
 const dateInput = form.elements.date;
 function today() {
   const now = new Date();
@@ -11,20 +12,21 @@ let workouts = [];
 
 function render() {
   list.replaceChildren();
-  document.querySelector('#count').textContent = `Iš viso: ${workouts.length}`;
-  if (!workouts.length) {
+  const filteredWorkouts = workouts.filter(workout => !typeFilter.value || (workout.type || 'Kita') === typeFilter.value);
+  document.querySelector('#count').textContent = `Iš viso: ${filteredWorkouts.length}`;
+  if (!filteredWorkouts.length) {
     const empty = document.createElement('p');
     empty.className = 'empty';
-    empty.textContent = 'Dar nėra treniruočių. Pridėkite pirmąją!';
+    empty.textContent = workouts.length ? 'Pasirinkto tipo treniruočių nėra.' : 'Dar nėra treniruočių. Pridėkite pirmąją!';
     list.append(empty);
   }
-  for (const workout of [...workouts].sort((a, b) => b.date.localeCompare(a.date))) {
+  for (const workout of filteredWorkouts.sort((a, b) => b.date.localeCompare(a.date))) {
     const card = document.createElement('article');
     const heading = document.createElement('h3');
     heading.textContent = workout.title;
     const meta = document.createElement('div');
     meta.className = 'meta';
-    meta.textContent = `${workout.date} · ${workout.minutes} min.`;
+    meta.textContent = `${workout.date} · ${workout.minutes} min. · ${workout.type || 'Kita'}`;
     card.append(heading, meta);
     if (workout.notes) {
       const notes = document.createElement('p');
@@ -34,6 +36,8 @@ function render() {
     list.append(card);
   }
 }
+
+typeFilter.addEventListener('change', render);
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();

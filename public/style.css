@@ -9,7 +9,7 @@ header p { color: #61736b; margin-bottom: 40px; }
 .card, article { background: white; border: 1px solid #dfe8e1; border-radius: 18px; padding: 26px; }
 h2 { font-size: 20px; margin: 0 0 24px; }
 label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
-input, textarea { display: block; width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #cad8ce; border-radius: 8px; font: inherit; background: #fcfdfc; color: inherit; }
+input, textarea, select { display: block; width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #cad8ce; border-radius: 8px; font: inherit; background: #fcfdfc; color: inherit; }
 textarea { resize: vertical; }
 .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 button { border: 0; border-radius: 9px; background: #246b49; color: white; width: 100%; padding: 14px; font: inherit; font-weight: 650; cursor: pointer; }
