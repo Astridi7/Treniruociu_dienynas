@@ -24,6 +24,7 @@ const assets = {
   '/': ['index.html', 'text/html; charset=utf-8'],
   '/style.css': ['style.css', 'text/css; charset=utf-8'],
   '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
+  '/weekly-report.js': ['weekly-report.js', 'text/javascript; charset=utf-8'],
 };
 
 const server = http.createServer(async (req, res) => {

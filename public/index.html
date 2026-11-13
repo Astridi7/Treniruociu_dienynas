@@ -10,6 +10,17 @@
 <body>
   <main>
     <header><span class="eyebrow">MANO PROGRESAS</span><h1>Treniruočių dienynas</h1><p>Kiekviena treniruotė – žingsnis pirmyn.</p></header>
+    <section class="card weekly-report" aria-labelledby="weekly-heading">
+      <h2 id="weekly-heading">Savaitės suvestinė</h2>
+      <div class="week-controls">
+        <button type="button" id="previous-week" aria-label="Ankstesnė savaitė">←</button>
+        <label>Pasirinkite savaitės dieną<input type="date" id="week-date" required></label>
+        <button type="button" id="next-week" aria-label="Kita savaitė">→</button>
+        <button type="button" id="current-week">Ši savaitė</button>
+      </div>
+      <p class="meta">Pirmadienis–sekmadienis. Įtraukiami visi treniruočių tipai.</p>
+      <div id="weekly-content" role="status" aria-live="polite"><p>Kraunama…</p></div>
+    </section>
     <div class="layout">
       <section class="card"><h2>Pridėti treniruotę</h2>
         <form id="workout-form">

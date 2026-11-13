@@ -15,6 +15,19 @@ npm start
 
 Atidarykite http://127.0.0.1:3000. Kuriant galima naudoti `npm run dev`.
 
+## Savaitės suvestinė
+
+Puslapio viršuje rodoma dabartinės savaitės (pirmadienio–sekmadienio)
+ataskaita: treniruočių skaičius, bendra trukmė minutėmis, aktyvių dienų
+skaičius ir vidutinė treniruotės trukmė (suapvalinta iki minutės).
+Lentelėse pateikiami rezultatai pagal dieną ir treniruotės tipą.
+Pasirinkite bet kurią datą arba naudokite rodykles kitai savaitei peržiūrėti;
+mygtukas „Ši savaitė“ grąžina dabartinę savaitę pagal vietinę įrenginio datą.
+Suvestinė apima visus tipus, nepriklausomai nuo treniruočių sąrašo filtro,
+ir atsinaujina pridėjus treniruotę. Senesni įrašai be tipo priskiriami „Kita“.
+
+Skaičiavimų patikra: `npm test`.
+
 ## Konfigūracija
 
 `.env.example` pateikia visus naudojamus nustatymus:
