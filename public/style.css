@@ -5,7 +5,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
 .eyebrow { color: #37775b; font-size: 12px; font-weight: 750; letter-spacing: .16em; }
 h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -.04em; margin: 12px 0; }
 header p { color: #61736b; margin-bottom: 40px; }
-.layout { display: grid; grid-template-columns: 380px 1fr; gap: 32px; align-items: start; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-bottom: 32px; }
 .card, article { background: white; border: 1px solid #dfe8e1; border-radius: 18px; padding: 26px; }
 h2 { font-size: 20px; margin: 0 0 24px; }
 label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 20px; }
@@ -23,7 +23,7 @@ article h3 { margin: 0 0 8px; font-size: 18px; overflow-wrap: anywhere; }
 article p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
 .empty { border: 1px dashed #b7cabc; border-radius: 16px; padding: 40px 24px; color: #61736b; text-align: center; }
 #status { font-size: 14px; margin-bottom: 0; }
-.exercise-timer { margin-bottom: 32px; }
+.history { margin-bottom: 32px; }
 .timer-display { font-size: clamp(36px, 8vw, 64px); font-variant-numeric: tabular-nums; font-family: ui-monospace, monospace; letter-spacing: .04em; }
 .timer-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 .timer-controls button { width: auto; flex: 1 1 120px; }
@@ -31,7 +31,7 @@ article p { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
 #timer-reset { background: #e7eee9; color: #19352d; }
 .timer-controls button:disabled { cursor: default; }
 #timer-status { margin-bottom: 0; font-size: 14px; color: #62776a; }
-.weekly-report { margin-bottom: 32px; }
+.weekly-report { margin-bottom: 0; }
 .week-controls { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; }
 .week-controls label { margin: 0; }
 .week-controls button { width: auto; }

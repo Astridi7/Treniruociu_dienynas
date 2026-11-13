@@ -10,29 +10,6 @@
 <body>
   <main>
     <header><span class="eyebrow">MANO PROGRESAS</span><h1>Treniruočių dienynas</h1><p>Kiekviena treniruotė – žingsnis pirmyn.</p></header>
-    <section class="card weekly-report" aria-labelledby="weekly-heading">
-      <h2 id="weekly-heading">Savaitės suvestinė</h2>
-      <div class="week-controls">
-        <button type="button" id="previous-week" aria-label="Ankstesnė savaitė">←</button>
-        <label>Pasirinkite savaitės dieną<input type="date" id="week-date" required></label>
-        <button type="button" id="next-week" aria-label="Kita savaitė">→</button>
-        <button type="button" id="current-week">Ši savaitė</button>
-      </div>
-      <p class="meta">Pirmadienis–sekmadienis. Įtraukiami visi treniruočių tipai.</p>
-      <div id="weekly-content" role="status" aria-live="polite"><p>Kraunama…</p></div>
-    </section>
-    <section class="card exercise-timer" aria-labelledby="timer-heading">
-      <h2 id="timer-heading">Pratimo laikmatis</h2>
-      <p class="meta">Matuokite pratimo laiką. Sustabdę galėsite tęsti.</p>
-      <div id="timer-display" class="timer-display" role="timer" aria-label="Pratimo laikas" aria-live="off">00:00:00</div>
-      <p class="meta">Valandos : minutės : sekundės</p>
-      <div class="timer-controls">
-        <button type="button" id="timer-start">Start</button>
-        <button type="button" id="timer-stop" disabled>Stop</button>
-        <button type="button" id="timer-reset" disabled>Nustatyti iš naujo</button>
-      </div>
-      <p id="timer-status" role="status" aria-live="polite">Pasiruošę pradėti.</p>
-    </section>
     <div class="layout">
       <section class="card"><h2>Pridėti treniruotę</h2>
         <form id="workout-form">
@@ -44,11 +21,34 @@
         </form>
         <p id="status" role="status" aria-live="polite"></p>
       </section>
-      <section class="history"><div class="history-heading"><h2>Mano treniruotės</h2><span id="count" role="status">0 treniruočių</span></div>
-        <label>Filtruoti pagal tipą<select id="type-filter"><option value="">Visi</option><option>Bėgimas</option><option>Jėga</option><option>Joga</option><option>Plaukimas</option><option>Kita</option></select></label>
-        <div id="workouts"><p>Kraunama…</p></div>
+      <section class="card exercise-timer" aria-labelledby="timer-heading">
+        <h2 id="timer-heading">Pratimo laikmatis</h2>
+        <p class="meta">Matuokite pratimo laiką. Sustabdę galėsite tęsti.</p>
+        <div id="timer-display" class="timer-display" role="timer" aria-label="Pratimo laikas" aria-live="off">00:00:00</div>
+        <p class="meta">Valandos : minutės : sekundės</p>
+        <div class="timer-controls">
+          <button type="button" id="timer-start">Start</button>
+          <button type="button" id="timer-stop" disabled>Stop</button>
+          <button type="button" id="timer-reset" disabled>Nustatyti iš naujo</button>
+        </div>
+        <p id="timer-status" role="status" aria-live="polite">Pasiruošę pradėti.</p>
       </section>
     </div>
+    <section class="history"><div class="history-heading"><h2>Mano treniruotės</h2><span id="count" role="status">0 treniruočių</span></div>
+      <label>Filtruoti pagal tipą<select id="type-filter"><option value="">Visi</option><option>Bėgimas</option><option>Jėga</option><option>Joga</option><option>Plaukimas</option><option>Kita</option></select></label>
+      <div id="workouts"><p>Kraunama…</p></div>
+    </section>
+    <section class="card weekly-report" aria-labelledby="weekly-heading">
+      <h2 id="weekly-heading">Savaitės suvestinė</h2>
+      <div class="week-controls">
+        <button type="button" id="previous-week" aria-label="Ankstesnė savaitė">←</button>
+        <label>Pasirinkite savaitės dieną<input type="date" id="week-date" required></label>
+        <button type="button" id="next-week" aria-label="Kita savaitė">→</button>
+        <button type="button" id="current-week">Ši savaitė</button>
+      </div>
+      <p class="meta">Pirmadienis–sekmadienis. Įtraukiami visi treniruočių tipai.</p>
+      <div id="weekly-content" role="status" aria-live="polite"><p>Kraunama…</p></div>
+    </section>
   </main>
 </body>
 </html>
